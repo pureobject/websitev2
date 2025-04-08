@@ -1,62 +1,33 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding and border are included in the width/height */
 }
 
 body {
+  margin: 0; /* Removes default body margin */
+  padding: 0; /* Removes default padding */
   font-family: 'Inter', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fff;
-  color: #000;
+  background-color: #fff; /* or any background you want */
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center content horizontally */
   justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px;
+  min-height: 100vh; /* Full height of the screen */
+  padding: 0 20px; /* Optional, depending on how you want padding around the edges */
 }
 
-.top-text {
-  font-size: 1.5rem;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-.center-toggle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-#logo {
-  cursor: pointer;
-}
-
-.toggle-item {
-  display: none;
-}
-
-.toggle-item.show {
-  display: block;
+.top-text, .bottom-email {
+  width: 100%; /* Ensure the text stretches across the container */
+  text-align: center; /* Center-align text */
+  margin: 0; /* Remove any margins */
+  padding: 0 20px; /* Optional padding for spacing around text */
+  font-size: 16px; /* Example font size */
+  font-weight: normal; /* Default weight */
 }
 
 .bottom-email {
-  margin-top: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.bottom-email a {
-  text-decoration: none;
-  color: inherit;
+  margin-top: auto; /* Pushes the bottom email to the bottom */
+  font-size: 14px; /* Example font size for the email */
 }

@@ -1,33 +1,35 @@
 * {
-  box-sizing: border-box; /* Ensures padding and border are included in the width/height */
+  box-sizing: border-box; /* Ensures padding and borders are included in width/height */
+  margin: 0; /* Removes any default margin */
 }
 
-body {
-  margin: 0; /* Removes default body margin */
-  padding: 0; /* Removes default padding */
+body, html {
+  height: 100%; /* Ensure full height is used */
   font-family: 'Inter', sans-serif;
-  background-color: #fff; /* or any background you want */
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Ensures top and bottom text are spaced correctly */
   align-items: center; /* Center content horizontally */
-  justify-content: space-between;
-  min-height: 100vh; /* Full height of the screen */
-  padding: 0 20px; /* Optional, depending on how you want padding around the edges */
+  min-height: 100vh; /* Makes sure the container spans full viewport height */
+  padding: 0 20px; /* Add horizontal padding to prevent touching sides */
 }
 
 .top-text, .bottom-email {
-  width: 100%; /* Ensure the text stretches across the container */
-  text-align: center; /* Center-align text */
-  margin: 0; /* Remove any margins */
-  padding: 0 20px; /* Optional padding for spacing around text */
-  font-size: 16px; /* Example font size */
-  font-weight: normal; /* Default weight */
+  width: 100%; /* Make sure these elements are full width */
+  text-align: center; /* Ensure text is centered */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove any margins that might shift text inwards */
 }
 
 .bottom-email {
-  margin-top: auto; /* Pushes the bottom email to the bottom */
-  font-size: 14px; /* Example font size for the email */
+  margin-top: auto; /* Ensures this stays at the bottom */
+  font-size: 14px; /* You can adjust this based on your needs */
+}
+
+.top-text {
+  font-size: 18px; /* Adjust size as needed */
+  font-weight: normal; /* Regular weight, adjust as necessary */
 }

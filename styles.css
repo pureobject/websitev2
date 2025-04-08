@@ -36,6 +36,7 @@ html, body {
   justify-content: center;
   min-height: 200px;
   width: 100%;
+  position: relative;
 }
 
 .toggle-item {
@@ -44,12 +45,14 @@ html, body {
   pointer-events: none;
   position: absolute;
   max-width: 600px;
+  visibility: hidden; /* Ensure visibility is off until toggle */
 }
 
 .toggle-item.show {
   opacity: 1;
   pointer-events: auto;
   position: relative;
+  visibility: visible; /* Makes content visible when active */
 }
 
 #logo {

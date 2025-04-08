@@ -1,77 +1,89 @@
-/* Reset all default margin and padding */
-*,
-*::before,
-*::after {
+/* General reset for padding and margin */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body and HTML setup */
 html, body {
-  height: 100%; /* Ensure the body and HTML are full height */
+  height: 100%;
   font-family: 'Inter', sans-serif;
-  width: 100%; /* Prevent horizontal overflow */
 }
 
-body {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0; /* Remove default padding */
-}
-
+/* Container setup */
 .container {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures top and bottom text are spaced correctly */
-  align-items: center;
-  width: 100%; /* Ensures the container fills the full width of the page */
-  padding: 0 20px; /* Optional padding for spacing */
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
 }
 
-.top-text, .bottom-email {
-  width: 100%; /* Ensures the text stretches fully */
-  text-align: center; /* Centers text */
-  margin: 0;
-}
-
+/* Text at the top of the page */
 .top-text {
-  font-size: 18px; /* Adjust font size for top text */
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
+/* Bottom Email section */
 .bottom-email {
-  font-size: 14px; /* Font size for email */
-  margin-top: auto; /* Ensures email is pushed to the bottom */
+  font-size: 14px;
+  margin-top: 20px;
 }
 
-/* Optional, you can add some spacing for the text */
-.top-text, .bottom-email {
-  padding: 0 20px;
+/* Flex container for the toggle content */
+.center-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Mobile Styles */
+/* Initially hidden content sections */
+.toggle-item {
+  display: none;
+}
+
+/* Show the content when toggled */
+.show {
+  display: block;
+}
+
+/* Styling for logo */
+#logo {
+  width: 200px;
+  height: auto;
+}
+
+/* Services and team content sections */
+.services-header {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Styles for bold text */
+.bold {
+  font-weight: bold;
+}
+
+/* Media queries for mobile */
 @media (max-width: 768px) {
   .top-text {
-    font-size: 16px; /* Smaller text on mobile */
+    font-size: 16px;
   }
 
   .bottom-email {
-    font-size: 12px; /* Smaller email text */
-  }
-
-  .container {
-    padding: 0 10px; /* Reduced padding for mobile */
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .top-text {
-    font-size: 14px; /* Even smaller text for very small screens */
+    font-size: 14px;
   }
 
   .bottom-email {
-    font-size: 10px; /* Even smaller email text */
+    font-size: 10px;
   }
 }

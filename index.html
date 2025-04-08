@@ -13,26 +13,54 @@
     <div class="top-text">Experiential Creative, Design & Production</div>
 
     <div class="center-toggle" onclick="toggleContent()">
-      <img id="logo" src="po-logo.png" alt="Pure Object Logo" class="toggle-item show" />
+      <img id="logo" src="images/po-logo.png" alt="Pure Object Logo" class="toggle-item show" />
       <div id="about" class="toggle-item">
         <p>Pure Object is an experiential creative production studio based in London and working globally with creatives and brands to create meaningful work with like-minded people.</p>
-
-<p>Tight-knit and highly experienced, our team of creatives, designers and producers are committed to crafting exceptional experiences and immersive worlds.</p>
-
-<p>Hands-on from start to finish, we balance creative vision with pragmatic design and efficient production. Intentionally lean, we ensure complete dedication and creative investment to each and every project. No excess, no gaps—just the perfect team, every time.</p> 
-  
-  <p>This isn’t just creative production. It’s creative care, from concept to delivery.</p>
       </div>
+      
+      <!-- Services Section -->
+      <div id="services" class="toggle-item">
+        <p class="services-header">Services</p>
+        <p><span class="bold">Creative</span><br>Creative Concept<br>Storytelling & Narrative<br>Art Direction</p>
+        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p><span class="bold">Design</span><br>Experience Design<br>Exhibition & Spatial Design<br>Graphic Design & Visual Identity<br>Technical Design</p>
+        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p><span class="bold">Production</span><br>Project Management<br>Stakeholder Management<br>Fabrication Oversight<br>Logistics Oversight<br>Installation Management</p>
+      </div>
+      
+      <!-- Our Team Section -->
+      <div id="team" class="toggle-item">
+        <p class="services-header">Our Team</p>
+        <p><span class="bold">Two Creative Directors</span> shape the overall vision, push boundaries, and guarantee quality.</p>
+        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p><span class="bold">One Creative Producer</span> works creatively to ensure everything runs smoothly, on time, and within budget.</p>
+        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p><span class="bold">One Graphic Designer</span> ensures the design speaks clearly and powerfully across all platforms.</p>
+        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p><span class="bold">One 3D Designer</span> turns ideas into 3D visualisations that help bring ideas to life.</p>
+        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>We assemble the perfect team of <span class="bold">Collaborative Associates</span> for each project from our international network of highly experienced specialists—including spatial, lighting, sound and interactive designers, architects and engineers. We can work independently or in-house to best suit the project.</p>
+      </div>
+
     </div>
 
-    <a href="mailto:hello@pure-object.com?Subject=Hello" target="_top" style="text-decoration: none;"><div class="bottom-email">hello@pure-object.com</div></a>
+    <a href="mailto:hello@pure-object.com?Subject=Hello" target="_top" style="text-decoration: none;">
+      <div class="bottom-email">hello@pure-object.com</div>
+    </a>
+  </div>
 
   <script>
     function toggleContent() {
       const logo = document.getElementById('logo');
       const about = document.getElementById('about');
+      const services = document.getElementById('services');
+      const team = document.getElementById('team'); // Get the team content
+
+      // Toggle visibility of the content
       logo.classList.toggle('show');
       about.classList.toggle('show');
+      services.classList.toggle('show');
+      team.classList.toggle('show'); // Toggle team content visibility
     }
   </script>
 </body>

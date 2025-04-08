@@ -63,3 +63,8 @@ html, body {
   font-size: 16px;
   line-height: 1.6;
 }
+
+/* Adds space between paragraphs */
+p {
+  margin-bottom: 20px; /* Adjust the spacing as needed */
+}

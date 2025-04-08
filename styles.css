@@ -1,35 +1,50 @@
-* {
-  box-sizing: border-box; /* Ensures padding and borders are included in width/height */
-  margin: 0; /* Removes any default margin */
+/* Reset all default margin and padding */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-  height: 100%; /* Ensure full height is used */
+html, body {
+  height: 100%; /* Ensure the body and HTML are full height */
+}
+
+body {
   font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensures top and bottom text are spaced correctly */
-  align-items: center; /* Center content horizontally */
-  min-height: 100vh; /* Makes sure the container spans full viewport height */
-  padding: 0 20px; /* Add horizontal padding to prevent touching sides */
+  align-items: center;
+  width: 100%; /* Ensures the container fills the full width of the page */
+  padding: 0 20px; /* Optional padding for spacing */
 }
 
 .top-text, .bottom-email {
-  width: 100%; /* Make sure these elements are full width */
-  text-align: center; /* Ensure text is centered */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove any margins that might shift text inwards */
-}
-
-.bottom-email {
-  margin-top: auto; /* Ensures this stays at the bottom */
-  font-size: 14px; /* You can adjust this based on your needs */
+  width: 100%; /* Ensures the text stretches fully */
+  text-align: center; /* Centers text */
+  margin: 0;
 }
 
 .top-text {
-  font-size: 18px; /* Adjust size as needed */
-  font-weight: normal; /* Regular weight, adjust as necessary */
+  font-size: 18px; /* Adjust font size for top text */
+}
+
+.bottom-email {
+  font-size: 14px; /* Font size for email */
+  margin-top: auto; /* Ensures email is pushed to the bottom */
+}
+
+/* Optional, you can add some spacing for the text */
+.top-text, .bottom-email {
+  padding: 0 20px;
 }

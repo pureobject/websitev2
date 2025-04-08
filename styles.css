@@ -32,7 +32,6 @@ body {
 #logo {
   width: 200px;
   height: auto;
-  transition: all 0.3s ease;
 }
 
 #about, #services, #team {
@@ -70,24 +69,4 @@ p {
   margin: 40px 0;
   color: #000;
   text-decoration: none;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .top-text {
-    font-size: 20px;
-    margin-top: 10px;
-  }
-
-  #logo {
-    width: 150px;
-  }
-
-  .container {
-    padding: 15px;
-  }
-
-  .bottom-email {
-    font-size: 14px;
-  }
 }

@@ -15,7 +15,7 @@ html, body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
@@ -40,7 +40,7 @@ html, body {
 
 .toggle-item {
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
   position: absolute;
   max-width: 600px;
@@ -93,4 +93,13 @@ p {
 
 #services .bold, #team .bold {
   font-weight: bold;
+}
+
+/* Ensure visibility of content in toggle */
+#services, #team {
+  display: none;
+}
+
+#services.show, #team.show {
+  display: block;
 }

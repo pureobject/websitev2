@@ -64,7 +64,33 @@ html, body {
   line-height: 1.6;
 }
 
-/* Global paragraph margin */
+/* Adds space between paragraphs */
 p {
-  margin-bottom: 20px; /* Adds space between paragraphs */
+  margin-bottom: 20px; /* Adjust the spacing as needed */
+}
+
+/* Services & Our Team Styling */
+#services, #team {
+  font-size: 16px;
+  color: #333;
+}
+
+.services-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* New extra text styling */
+#services p, #team p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#services .bold, #team .bold {
+  font-weight: bold;
 }

@@ -9,14 +9,16 @@
 
 html, body {
   height: 100%; /* Ensure the body and HTML are full height */
+  font-family: 'Inter', sans-serif;
+  width: 100%; /* Prevent horizontal overflow */
 }
 
 body {
-  font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   min-height: 100vh;
+  padding: 0; /* Remove default padding */
 }
 
 .container {
@@ -47,4 +49,29 @@ body {
 /* Optional, you can add some spacing for the text */
 .top-text, .bottom-email {
   padding: 0 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .top-text {
+    font-size: 16px; /* Smaller text on mobile */
+  }
+
+  .bottom-email {
+    font-size: 12px; /* Smaller email text */
+  }
+
+  .container {
+    padding: 0 10px; /* Reduced padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-text {
+    font-size: 14px; /* Even smaller text for very small screens */
+  }
+
+  .bottom-email {
+    font-size: 10px; /* Even smaller email text */
+  }
 }

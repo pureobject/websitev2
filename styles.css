@@ -45,14 +45,13 @@ html, body {
   pointer-events: none;
   position: absolute;
   max-width: 600px;
-  visibility: hidden; /* Ensure visibility is off until toggle */
 }
 
 .toggle-item.show {
   opacity: 1;
   pointer-events: auto;
   position: relative;
-  visibility: visible; /* Makes content visible when active */
+  visibility: visible;
 }
 
 #logo {
@@ -62,47 +61,27 @@ html, body {
   -webkit-user-drag: none;
 }
 
-#about p {
+/* Paragraph Styling */
+#about p,
+#services p,
+#team p {
   font-size: 16px;
   line-height: 1.6;
+  margin-bottom: 20px; /* Space between paragraphs */
 }
 
-/* Adds space between paragraphs */
-p {
-  margin-bottom: 20px; /* Adjust the spacing as needed */
+/* Bold text styling */
+.bold {
+  font-weight: bold;
 }
 
-/* Services & Our Team Styling */
+/* Service Section Styling */
 #services, #team {
   font-size: 16px;
-  color: #333;
 }
 
 .services-header {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-/* New extra text styling */
-#services p, #team p {
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-#services .bold, #team .bold {
-  font-weight: bold;
-}
-
-/* Ensure visibility of content in toggle */
-#services, #team {
-  display: none;
-}
-
-#services.show, #team.show {
-  display: block;
 }

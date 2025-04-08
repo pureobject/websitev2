@@ -12,8 +12,11 @@
   <div class="container">
     <div class="top-text">Experiential Creative, Design & Production</div>
 
+    <!-- Clickable section to toggle content -->
     <div class="center-toggle" onclick="toggleContent()">
       <img id="logo" src="images/po-logo.png" alt="Pure Object Logo" class="toggle-item show" />
+      
+      <!-- Content that shows when logo is clicked -->
       <div id="about" class="toggle-item">
         <p>Pure Object is an experiential creative production studio based in London and working globally with creatives and brands to create meaningful work with like-minded people.</p>
       </div>
@@ -22,9 +25,9 @@
       <div id="services" class="toggle-item">
         <p class="services-header">Services</p>
         <p><span class="bold">Creative</span><br>Creative Concept<br>Storytelling & Narrative<br>Art Direction</p>
-        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>&nbsp;</p>
         <p><span class="bold">Design</span><br>Experience Design<br>Exhibition & Spatial Design<br>Graphic Design & Visual Identity<br>Technical Design</p>
-        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>&nbsp;</p>
         <p><span class="bold">Production</span><br>Project Management<br>Stakeholder Management<br>Fabrication Oversight<br>Logistics Oversight<br>Installation Management</p>
       </div>
 
@@ -32,13 +35,13 @@
       <div id="team" class="toggle-item">
         <p class="services-header">Our Team</p>
         <p><span class="bold">Two Creative Directors</span> shape the overall vision, push boundaries, and guarantee quality.</p>
-        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>&nbsp;</p>
         <p><span class="bold">One Creative Producer</span> works creatively to ensure everything runs smoothly, on time, and within budget.</p>
-        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>&nbsp;</p>
         <p><span class="bold">One Graphic Designer</span> ensures the design speaks clearly and powerfully across all platforms.</p>
-        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>&nbsp;</p>
         <p><span class="bold">One 3D Designer</span> turns ideas into 3D visualisations that help bring ideas to life.</p>
-        <p>&nbsp;</p> <!-- Empty space for paragraph break -->
+        <p>&nbsp;</p>
         <p>We assemble the perfect team of <span class="bold">Collaborative Associates</span> for each project from our international network of highly experienced specialists—including spatial, lighting, sound and interactive designers, architects and engineers. We can work independently or in-house to best suit the project.</p>
       </div>
     </div>
@@ -48,18 +51,38 @@
     </a>
   </div>
 
+  <!-- JavaScript -->
   <script>
+    let contentState = 0; // Keeps track of current visible content
+
     function toggleContent() {
       const logo = document.getElementById('logo');
       const about = document.getElementById('about');
       const services = document.getElementById('services');
-      const team = document.getElementById('team'); // Get the team content
-
-      // Toggle visibility of the content
-      logo.classList.toggle('show');
-      about.classList.toggle('show');
-      services.classList.toggle('show');
-      team.classList.toggle('show'); // Toggle team content visibility
+      const team = document.getElementById('team');
+      
+      // Handle the state of the content being shown
+      if (contentState === 0) {
+        // Show 'about' and hide logo
+        logo.classList.remove('show');
+        about.classList.add('show');
+        contentState = 1;
+      } else if (contentState === 1) {
+        // Show 'services' and hide 'about'
+        about.classList.remove('show');
+        services.classList.add('show');
+        contentState = 2;
+      } else if (contentState === 2) {
+        // Show 'team' and hide 'services'
+        services.classList.remove('show');
+        team.classList.add('show');
+        contentState = 3;
+      } else {
+        // Hide all content and show the logo again
+        team.classList.remove('show');
+        logo.classList.add('show');
+        contentState = 0;
+      }
     }
   </script>
 </body>

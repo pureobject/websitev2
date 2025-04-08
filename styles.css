@@ -1,72 +1,87 @@
-/* Reset some default margins and paddings for clean layout */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
+  background-color: #eeeeee;
   font-family: 'Inter', sans-serif;
-  background-color: #f2f2f2;
+  color: #2020cc;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
-  padding: 10px;
+  padding: 40px 20px;
 }
 
-.top-text {
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 20px;
-  color: #000;
-  text-transform: uppercase;
+/* Top & bottom text */
+.top-text,
+.bottom-email {
+  font-size: 16px;
 }
 
-/* Logo and about section */
+/* Toggle section (logo/about) */
 .center-toggle {
-  margin-top: 40px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+  position: relative;
+}
+
+.toggle-item {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+  max-width: 600px;
+}
+
+.toggle-item.show {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  visibility: visible;
 }
 
 #logo {
-  width: 200px;
+  width: 300px;
   height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-#about, #services, #team {
-  display: none;
-}
-
-#about.show, #services.show, #team.show {
-  display: block;
-  padding: 20px;
-}
-
-p {
-  margin-bottom: 16px;
-  line-height: 1.6;
+/* Paragraph Styling */
+#about p,
+#services p,
+#team p {
   font-size: 16px;
-  color: #333;
-}
-
-/* Services section */
-.services-header {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Space between paragraphs */
 }
 
 /* Bold text styling */
 .bold {
-  font-weight: 700;
+  font-weight: bold;
 }
 
-/* Bottom email styling */
-.bottom-email {
+/* Service Section Styling */
+#services, #team {
   font-size: 16px;
-  font-weight: 700;
-  margin: 40px 0;
-  color: #000;
-  text-decoration: none;
+}
+
+.services-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }

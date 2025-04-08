@@ -1,89 +1,93 @@
-/* General reset for padding and margin */
+/* Reset some default margins and paddings for clean layout */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and HTML setup */
-html, body {
-  height: 100%;
+body {
   font-family: 'Inter', sans-serif;
+  background-color: #f2f2f2;
 }
 
-/* Container setup */
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 20px;
   text-align: center;
+  padding: 10px;
 }
 
-/* Text at the top of the page */
 .top-text {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-/* Bottom Email section */
-.bottom-email {
-  font-size: 14px;
+  font-size: 24px;
+  font-weight: 700;
   margin-top: 20px;
+  color: #000;
+  text-transform: uppercase;
 }
 
-/* Flex container for the toggle content */
+/* Logo and about section */
 .center-toggle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 40px;
+  cursor: pointer;
 }
 
-/* Initially hidden content sections */
-.toggle-item {
-  display: none;
-}
-
-/* Show the content when toggled */
-.show {
-  display: block;
-}
-
-/* Styling for logo */
 #logo {
   width: 200px;
   height: auto;
+  transition: all 0.3s ease;
 }
 
-/* Services and team content sections */
+#about, #services, #team {
+  display: none;
+}
+
+#about.show, #services.show, #team.show {
+  display: block;
+  padding: 20px;
+}
+
+p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Services section */
 .services-header {
-  font-weight: bold;
-  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-/* Styles for bold text */
+/* Bold text styling */
 .bold {
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Media queries for mobile */
+/* Bottom email styling */
+.bottom-email {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 40px 0;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .top-text {
-    font-size: 16px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  #logo {
+    width: 150px;
+  }
+
+  .container {
+    padding: 15px;
   }
 
   .bottom-email {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-text {
     font-size: 14px;
-  }
-
-  .bottom-email {
-    font-size: 10px;
   }
 }

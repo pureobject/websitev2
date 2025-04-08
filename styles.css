@@ -1,0 +1,65 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #eeeeee;
+  font-family: 'Inter', sans-serif;
+  color: #2020cc;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Top & bottom text */
+.top-text,
+.bottom-email {
+  font-size: 16px;
+}
+
+/* Toggle section (logo/about) */
+.center-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.toggle-item {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+  position: absolute;
+  max-width: 600px;
+}
+
+.toggle-item.show {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+#logo {
+  width: 300px;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#about p {
+  font-size: 16px;
+  line-height: 1.6;
+}

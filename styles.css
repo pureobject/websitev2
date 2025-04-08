@@ -1,87 +1,62 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  background-color: #eeeeee;
+body {
   font-family: 'Inter', sans-serif;
-  color: #2020cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  color: #000;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
   text-align: center;
-  padding: 40px 20px;
-}
-
-/* Top & bottom text */
-.top-text,
-.bottom-email {
-  font-size: 16px;
-}
-
-/* Toggle section (logo/about) */
-.center-toggle {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
   width: 100%;
-  position: relative;
+  max-width: 1200px;
+  padding: 20px;
 }
 
-.toggle-item {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  position: absolute;
-  max-width: 600px;
+.top-text {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
-.toggle-item.show {
-  opacity: 1;
-  pointer-events: auto;
-  position: relative;
-  visibility: visible;
+.center-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 #logo {
-  width: 300px;
-  height: auto;
-  user-select: none;
-  -webkit-user-drag: none;
+  cursor: pointer;
 }
 
-/* Paragraph Styling */
-#about p,
-#services p,
-#team p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px; /* Space between paragraphs */
+.toggle-item {
+  display: none;
 }
 
-/* Bold text styling */
-.bold {
+.toggle-item.show {
+  display: block;
+}
+
+.bottom-email {
+  margin-top: 20px;
+  font-size: 1rem;
   font-weight: bold;
 }
 
-/* Service Section Styling */
-#services, #team {
-  font-size: 16px;
-}
-
-.services-header {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.bottom-email a {
+  text-decoration: none;
+  color: inherit;
 }

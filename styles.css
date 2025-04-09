@@ -27,12 +27,19 @@ html, body {
 }
 
 /* Top & bottom text */
-.top-text,
+.top-text {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Bottom email text (can be highlighted) */
 .bottom-email {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
-  user-select: none;  /* Prevent text selection */
+  user-select: text; /* Allow email to be selected */
 }
 
 /* Toggle section (logo/about) */
@@ -73,15 +80,15 @@ html, body {
 #logo {
   width: clamp(180px, 30vw, 300px);
   height: auto;
-  user-select: none;
-  -webkit-user-drag: none;
+  user-select: none; /* Prevent logo from being selected */
+  -webkit-user-drag: none; /* Prevent dragging the logo */
 }
 
 #about p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
-  user-select: none;  /* Prevent text selection */
+  user-select: none; /* Prevent text selection */
 }
 
 /* Responsive tweaks */

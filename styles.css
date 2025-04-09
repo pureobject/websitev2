@@ -24,8 +24,8 @@ html, body {
   height: 100vh;
   text-align: center;
   padding: 40px 20px;
-  opacity: 0;
-  transition: opacity 2s ease-in-out 0.5s; /* Fade in entire container */
+  opacity: 0; /* Start hidden */
+  transition: opacity 2s ease-in-out 0.5s; /* Fade in the entire container after a delay */
 }
 
 /* Top & bottom text */
@@ -34,8 +34,8 @@ html, body {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
-  opacity: 0;
-  transition: opacity 1s ease-in-out; /* Fade in header and footer */
+  opacity: 0; /* Start with text hidden */
+  transition: opacity 1s ease-in-out; /* Fade in the text */
 }
 
 /* Toggle section (logo/about) */
@@ -46,7 +46,7 @@ html, body {
   justify-content: center;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  opacity: 0; /* Start hidden */
   transition: opacity 1s ease-in-out 0.5s; /* Delay the appearance of the container */
 }
 
@@ -58,7 +58,7 @@ html, body {
   transform: translate(-50%, -50%);
   max-width: 600px;
   width: 100%;
-  opacity: 0;
+  opacity: 0; /* Start with content hidden */
   visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   z-index: 1;

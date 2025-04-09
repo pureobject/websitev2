@@ -9,17 +9,11 @@ html, body {
   height: 100%;
   overflow: hidden;
   overscroll-behavior: none;
-  touch-action: none;
+  touch-action: manipulation;
   background-color: #eeeeee;
   font-family: 'Inter', sans-serif;
   color: #2020cc;
-}
-
-@media (max-width: 768px) {
-  html, body {
-    overflow: auto; /* Allows natural mobile bounce/scroll */
-    -webkit-overflow-scrolling: touch;
-  }
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -28,7 +22,6 @@ html, body {
   justify-content: space-between;
   align-items: center;
   height: 100svh;
-  height: 100vh;
   text-align: left;
   padding: 40px 20px;
 }
@@ -36,19 +29,9 @@ html, body {
 /* Top & bottom text */
 .top-text,
 .bottom-email {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
-}
-
-/* Logo */
-.center-logo img {
-  max-width: 100%;
-  width: clamp(150px, 30vw, 300px);
-  height: auto;
-  user-select: none;
-  -webkit-user-drag: none;
-  pointer-events: none;
 }
 
 /* Toggle section (logo/about) */
@@ -63,10 +46,10 @@ html, body {
 
 .toggle-item {
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.35s ease; /* Slower toggle fade */
   pointer-events: none;
   position: absolute;
-  max-width: 450px;
+  max-width: 600px;
 }
 
 .toggle-item.show {
@@ -82,7 +65,38 @@ html, body {
   -webkit-user-drag: none;
 }
 
+/* Paragraph styling */
 #about p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 1.2em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 16px;
+  }
+
+  #logo {
+    width: 220px;
+  }
+
+  .top-text,
+  .bottom-email,
+  #about p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #logo {
+    width: 180px;
+  }
+
+  .top-text,
+  .bottom-email,
+  #about p {
+    font-size: 0.9rem;
+  }
 }

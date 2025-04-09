@@ -67,7 +67,7 @@ html, body {
   z-index: 1;
   pointer-events: none;
   padding: 0 24px; /* breathing room */
-  text-align: center;
+  text-align: left;
 }
 
 .toggle-item.show {

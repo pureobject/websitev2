@@ -3,19 +3,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none; /* Disable text selection globally */
 }
 
+/* General Body and HTML Styling */
 html, body {
   height: 100%;
+  width: 100%;
   overflow: hidden;
-  overscroll-behavior: none;
-  touch-action: manipulation;
   background-color: #eeeeee;
   font-family: 'Inter', sans-serif;
   color: #2020cc;
 }
 
-/* Container */
+/* Container for all content */
 .container {
   display: flex;
   flex-direction: column;
@@ -24,9 +25,9 @@ html, body {
   height: 100vh;
   text-align: center;
   padding: 40px 20px;
-  opacity: 0; /* Start hidden */
+  opacity: 0;
   animation: fadeInContainer 1s ease-in-out forwards;
-  animation-delay: 0.5s; /* Delay the container fade-in */
+  animation-delay: 0.5s;
 }
 
 /* Fade-in effect for the container */
@@ -36,15 +37,15 @@ html, body {
   }
 }
 
-/* Top & bottom text */
+/* Top Text (head) */
 .top-text,
 .bottom-email {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   animation: fadeInText 1s ease-in-out forwards;
-  animation-delay: 2s; /* Delay the text fade-in */
+  animation-delay: 2s;
 }
 
 /* Fade-in effect for the text */
@@ -54,7 +55,7 @@ html, body {
   }
 }
 
-/* Toggle section (logo/about) */
+/* Centered Toggle Section (logo/about) */
 .center-toggle {
   cursor: pointer;
   display: flex;
@@ -65,7 +66,7 @@ html, body {
   height: 100%;
 }
 
-/* Toggle items: shared styles for logo and text */
+/* Toggle Items (logo and about text) */
 .toggle-item {
   position: absolute;
   top: 50%;
@@ -73,7 +74,7 @@ html, body {
   transform: translate(-50%, -50%);
   max-width: 600px;
   width: 100%;
-  opacity: 0; /* Start as invisible */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
   z-index: 1;
@@ -82,7 +83,7 @@ html, body {
   text-align: center;
 }
 
-/* When the items are visible (after click) */
+/* Show the toggle items when clicked */
 .toggle-item.show {
   opacity: 1;
   visibility: visible;
@@ -90,15 +91,15 @@ html, body {
   pointer-events: auto;
 }
 
-/* Logo image */
+/* Logo Image */
 #logo {
   width: clamp(180px, 30vw, 300px);
   height: auto;
-  user-select: none;
+  user-select: none; /* Disable image selection */
   -webkit-user-drag: none;
-  opacity: 0; /* Start logo as invisible */
+  opacity: 0;
   animation: fadeInLogo 1s ease-in-out forwards;
-  animation-delay: 1s; /* Delay the logo fade-in */
+  animation-delay: 1s;
 }
 
 /* Fade-in effect for the logo */
@@ -108,14 +109,26 @@ html, body {
   }
 }
 
-/* About text */
+/* About Text */
 #about p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* Responsive tweaks */
+/* Bottom Email Styling (footer) */
+.bottom-email {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation-delay: 3s; /* Appears after everything else */
+  visibility: visible;
+  text-decoration: none;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
   .container {
     padding: 30px 16px;
@@ -127,5 +140,9 @@ html, body {
 
   #about p {
     font-size: 15px;
+  }
+
+  .bottom-email {
+    font-size: 14px;
   }
 }

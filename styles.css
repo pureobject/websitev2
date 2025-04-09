@@ -1,0 +1,39 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #ededed;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.top-text,
+.bottom-email {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+}
+
+.center-logo img {
+  max-width: 100%;
+  height: auto;
+  width: 200px; /* Adjust this as needed */
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}

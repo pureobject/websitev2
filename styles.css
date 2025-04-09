@@ -15,7 +15,7 @@ html, body {
   color: #2020cc;
 }
 
-/* Container: initially hidden and will fade in after the page load */
+/* Container */
 .container {
   display: flex;
   flex-direction: column;
@@ -25,8 +25,16 @@ html, body {
   height: 100vh;
   text-align: center;
   padding: 40px 20px;
-  opacity: 0; /* Start container hidden */
-  transition: opacity 0.6s ease 0.5s; /* Delay fade-in for the container */
+  opacity: 0; /* Start hidden */
+  animation: fadeInContainer 1s ease-in-out forwards;
+  animation-delay: 0.5s; /* Delay the container fade-in */
+}
+
+/* Fade-in effect for the container */
+@keyframes fadeInContainer {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Top & bottom text */
@@ -35,8 +43,16 @@ html, body {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
-  opacity: 0; /* Hide initially */
-  transition: opacity 0.6s ease 1s; /* Fade-in delay after image fades in */
+  opacity: 0; /* Initially hidden */
+  animation: fadeInText 1s ease-in-out forwards;
+  animation-delay: 2s; /* Delay the text fade-in */
+}
+
+/* Fade-in effect for the text */
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Toggle section (logo/about) */
@@ -63,7 +79,7 @@ html, body {
   transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
   z-index: 1;
   pointer-events: none;
-  padding: 0 24px; /* breathing room */
+  padding: 0 24px;
   text-align: center;
 }
 
@@ -81,9 +97,16 @@ html, body {
   height: auto;
   user-select: none;
   -webkit-user-drag: none;
-  opacity: 0; /* Start logo hidden */
-  transition: opacity 1s ease; /* Fade-in for the logo */
-  visibility: visible;
+  opacity: 0; /* Start logo as invisible */
+  animation: fadeInLogo 1s ease-in-out forwards;
+  animation-delay: 1s; /* Delay the logo fade-in */
+}
+
+/* Fade-in effect for the logo */
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+  }
 }
 
 /* About text */

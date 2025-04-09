@@ -15,54 +15,42 @@ html, body {
   color: #2020cc;
 }
 
+/* Container for everything */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100svh;
   height: 100vh;
   text-align: center;
   padding: 40px 20px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out 0.5s; /* Fade in entire container */
 }
 
-/* Fade-in for logo and text */
-@keyframes fadeInLogo {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Top & bottom text */
+.top-text,
+.bottom-email {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Fade in header and footer */
 }
 
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+/* Toggle section (logo/about) */
 .center-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out 0.5s; /* Delay the appearance of the container */
 }
 
-#logo {
-  width: clamp(180px, 30vw, 300px);
-  height: auto;
-  user-select: none;
-  -webkit-user-drag: none;
-  animation: fadeInLogo 2s ease-out 0.5s forwards; /* Fade-in for logo */
-}
-
+/* Toggle items: shared styles for logo and text */
 .toggle-item {
   position: absolute;
   top: 50%;
@@ -72,32 +60,52 @@ html, body {
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   z-index: 1;
-  pointer-events: none;
-  padding: 0 24px; /* breathing room */
-  text-align: center;
 }
 
 .toggle-item.show {
   opacity: 1;
   visibility: visible;
   z-index: 2;
-  pointer-events: auto;
-  animation: fadeInText 2s ease-out 2.5s forwards; /* Fade-in for text after image */
 }
 
-.top-text,
-.bottom-email {
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  color: #272ec1;
+/* Logo */
+#logo {
+  width: clamp(180px, 30vw, 300px);
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
+/* About Text */
 #about p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
+}
+
+/* Fade in image first, then header/footer */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#logo {
+  animation: fadeIn 1.5s ease-out forwards; /* Fade in the logo */
+}
+
+.top-text, .bottom-email {
+  animation: fadeIn 2s ease-out forwards; /* Fade in header and footer */
+  animation-delay: 1.5s; /* Wait until logo has faded */
+}
+
+.container {
+  opacity: 1;
 }
 
 /* Responsive tweaks */

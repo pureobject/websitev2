@@ -37,3 +37,13 @@ html, body {
   -webkit-user-drag: none;
   pointer-events: none;
 }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #ededed;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+  overscroll-behavior: none;
+  touch-action: none;
+}

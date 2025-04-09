@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pure Object</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
@@ -10,8 +11,10 @@
 </head>
 <body>
   <div class="container">
+    <!-- Text at the top (head) -->
     <div class="top-text">Experiential Creative, Design & Production</div>
 
+    <!-- Centered logo and about content -->
     <div class="center-toggle" onclick="toggleContent()">
       <img id="logo" src="po-logo.png" alt="Pure Object Logo" class="toggle-item" />
       <div id="about" class="toggle-item">
@@ -19,6 +22,7 @@
       </div>
     </div>
 
+    <!-- Bottom email link (footer) -->
     <a href="mailto:hello@pure-object.com?Subject=Hello" target="_top" style="text-decoration: none;">
       <div class="bottom-email">hello@pure-object.com</div>
     </a>
@@ -27,32 +31,31 @@
   <!-- JavaScript to handle animations and toggling -->
   <script>
     window.addEventListener('load', () => {
-      // Fade in the image and text when the page loads
       const logo = document.getElementById('logo');
       const topText = document.querySelector('.top-text');
       const bottomEmail = document.querySelector('.bottom-email');
+      const aboutText = document.getElementById('about');
 
-      // Set initial opacity to 0
+      // Set initial opacity to 0 for the logo and text
       logo.style.opacity = '0';
       topText.style.opacity = '0';
       bottomEmail.style.opacity = '0';
 
-      // Apply a slight delay for fade-in
+      // Apply fade-in with a delay for the logo first
       setTimeout(() => {
         logo.style.transition = 'opacity 1s ease-in-out';
         topText.style.transition = 'opacity 1s ease-in-out';
         bottomEmail.style.transition = 'opacity 1s ease-in-out';
 
-        // Fade in the logo and text
         logo.style.opacity = '1';
-        topText.style.opacity = '1';
-        bottomEmail.style.opacity = '1';
-      }, 100); // Delay added for smooth transition
+        setTimeout(() => {
+          topText.style.opacity = '1';
+          bottomEmail.style.opacity = '1';
+        }, 1000); // Delay for the top text and bottom email
+      }, 100); // Slight delay for logo fade-in
 
       // Add click event to toggle logo and about text
       const logoAndAbout = document.querySelector('.center-toggle');
-      const aboutText = document.getElementById('about');
-
       logoAndAbout.addEventListener('click', () => {
         logo.classList.toggle('show');
         aboutText.classList.toggle('show');

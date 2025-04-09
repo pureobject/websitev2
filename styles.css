@@ -76,6 +76,8 @@ html, body {
   height: auto;
   user-select: none;
   -webkit-user-drag: none;
+  opacity: 0; /* Start with logo invisible */
+  animation: fadeInLogo 1.5s ease-out forwards; /* Fade in the logo */
 }
 
 /* About Text */
@@ -83,10 +85,13 @@ html, body {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
+  opacity: 0; /* Start with text invisible */
+  animation: fadeInText 1.5s ease-out forwards; /* Fade in text */
+  animation-delay: 1.5s; /* Wait until the logo fades */
 }
 
-/* Fade in image first, then header/footer */
-@keyframes fadeIn {
+/* Fade-in keyframes for logo and text */
+@keyframes fadeInLogo {
   0% {
     opacity: 0;
   }
@@ -95,17 +100,13 @@ html, body {
   }
 }
 
-#logo {
-  animation: fadeIn 1.5s ease-out forwards; /* Fade in the logo */
-}
-
-.top-text, .bottom-email {
-  animation: fadeIn 2s ease-out forwards; /* Fade in header and footer */
-  animation-delay: 1.5s; /* Wait until logo has faded */
-}
-
-.container {
-  opacity: 1;
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Responsive tweaks */

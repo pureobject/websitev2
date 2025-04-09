@@ -1,66 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pure Object</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-</head>
-<body>
-  <div class="container">
-    <!-- Text at the top (head) -->
-    <div class="top-text">Experiential Creative, Design & Production</div>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <!-- Centered logo and about content -->
-    <div class="center-toggle" onclick="toggleContent()">
-      <img id="logo" src="po-logo.png" alt="Pure Object Logo" class="toggle-item" />
-      <div id="about" class="toggle-item">
-        <p>Pure Object is an experiential creative production studio based in London and working globally with creatives and brands to create meaningful work with like-minded people.</p>
-      </div>
-    </div>
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  background-color: #eeeeee;
+  font-family: 'Inter', sans-serif;
+  color: #2020cc;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    <!-- Bottom email link (footer) -->
-    <a href="mailto:hello@pure-object.com?Subject=Hello" target="_top" style="text-decoration: none;">
-      <div class="bottom-email">hello@pure-object.com</div>
-    </a>
-  </div>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100svh;
+  text-align: left;
+  padding: 40px 20px;
+}
 
-  <!-- JavaScript to handle animations and toggling -->
-  <script>
-    window.addEventListener('load', () => {
-      const logo = document.getElementById('logo');
-      const topText = document.querySelector('.top-text');
-      const bottomEmail = document.querySelector('.bottom-email');
-      const aboutText = document.getElementById('about');
+/* Top & bottom text */
+.top-text,
+.bottom-email {
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
+}
 
-      // Set initial opacity to 0 for the logo and text
-      logo.style.opacity = '0';
-      topText.style.opacity = '0';
-      bottomEmail.style.opacity = '0';
+/* Toggle section (logo/about) */
+.center-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+}
 
-      // Apply fade-in with a delay for the logo first
-      setTimeout(() => {
-        logo.style.transition = 'opacity 1s ease-in-out';
-        topText.style.transition = 'opacity 1s ease-in-out';
-        bottomEmail.style.transition = 'opacity 1s ease-in-out';
+.toggle-item {
+  opacity: 0;
+  transition: opacity 0.35s ease; /* Slower toggle fade */
+  pointer-events: none;
+  position: absolute;
+  max-width: 600px;
+}
 
-        logo.style.opacity = '1';
-        setTimeout(() => {
-          topText.style.opacity = '1';
-          bottomEmail.style.opacity = '1';
-        }, 1000); // Delay for the top text and bottom email
-      }, 100); // Slight delay for logo fade-in
+.toggle-item.show {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
 
-      // Add click event to toggle logo and about text
-      const logoAndAbout = document.querySelector('.center-toggle');
-      logoAndAbout.addEventListener('click', () => {
-        logo.classList.toggle('show');
-        aboutText.classList.toggle('show');
-      });
-    });
-  </script>
-</body>
-</html>
+#logo {
+  width: 300px;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Paragraph styling */
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 16px;
+  }
+
+  #logo {
+    width: 220px;
+  }
+
+  .top-text,
+  .bottom-email,
+  #about p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #logo {
+    width: 180px;
+  }
+
+  .top-text,
+  .bottom-email,
+  #about p {
+    font-size: 0.9rem;
+  }
+}

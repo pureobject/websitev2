@@ -67,7 +67,6 @@ html, body {
   z-index: 1;
   pointer-events: none;
   padding: 0 24px; /* breathing room */
-  text-align: left;
 }
 
 .toggle-item.show {
@@ -87,7 +86,9 @@ html, body {
 #about p {
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  padding-left: 48px;
+  text-align: left;
   user-select: none; /* Prevent text selection */
 }
 
@@ -103,5 +104,6 @@ html, body {
 
   #about p {
     font-size: 15px;
+    padding-left: 24px;
   }
 }

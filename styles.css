@@ -13,7 +13,6 @@ html, body {
   background-color: #eeeeee;
   font-family: 'Inter', sans-serif;
   color: #2020cc;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -22,6 +21,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   height: 100svh;
+  height: 100vh;
   text-align: left;
   padding: 40px 20px;
 }
@@ -29,7 +29,7 @@ html, body {
 /* Top & bottom text */
 .top-text,
 .bottom-email {
-  font-size: 1rem;
+  font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
 }
@@ -42,61 +42,51 @@ html, body {
   justify-content: center;
   min-height: 200px;
   width: 100%;
+  position: relative;
 }
 
+/* Toggle items: shared styles for logo and text */
 .toggle-item {
-  opacity: 0;
-  transition: opacity 0.35s ease; /* Slower toggle fade */
-  pointer-events: none;
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   max-width: 600px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .toggle-item.show {
   opacity: 1;
+  visibility: visible;
+  z-index: 2;
   pointer-events: auto;
-  position: relative;
 }
 
 #logo {
-  width: 300px;
+  width: clamp(180px, 30vw, 300px);
   height: auto;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Paragraph styling */
 #about p {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 1.2em;
+  margin-bottom: 20px;
 }
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .container {
     padding: 30px 16px;
   }
 
-  #logo {
-    width: 220px;
-  }
-
-  .top-text,
-  .bottom-email,
   #about p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #logo {
-    width: 180px;
-  }
-
-  .top-text,
-  .bottom-email,
-  #about p {
-    font-size: 0.9rem;
+    font-size: 15px;
   }
 }

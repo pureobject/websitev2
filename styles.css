@@ -26,34 +26,43 @@ html, body {
   padding: 40px 20px;
 }
 
-/* Top & bottom text */
-.top-text {
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  color: #272ec1;
-  user-select: none; /* Prevent text selection */
+/* Fade-in for logo and text */
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Bottom email text (can be highlighted) */
-.bottom-email {
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  color: #272ec1;
-  user-select: text; /* Allow email to be selected */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Toggle section (logo/about) */
 .center-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Toggle items: shared styles for logo and text */
+#logo {
+  width: clamp(180px, 30vw, 300px);
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: fadeInLogo 2s ease-out 0.5s forwards; /* Fade-in for logo */
+}
+
 .toggle-item {
   position: absolute;
   top: 50%;
@@ -75,20 +84,20 @@ html, body {
   visibility: visible;
   z-index: 2;
   pointer-events: auto;
+  animation: fadeInText 2s ease-out 2.5s forwards; /* Fade-in for text after image */
 }
 
-#logo {
-  width: clamp(180px, 30vw, 300px);
-  height: auto;
-  user-select: none; /* Prevent logo from being selected */
-  -webkit-user-drag: none; /* Prevent dragging the logo */
+.top-text,
+.bottom-email {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #272ec1;
 }
 
 #about p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
-  user-select: none; /* Prevent text selection */
 }
 
 /* Responsive tweaks */

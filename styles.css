@@ -3,70 +3,49 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none; /* Disable text selection globally */
 }
 
-/* General Body and HTML Styling */
 html, body {
   height: 100%;
-  width: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
   background-color: #eeeeee;
   font-family: 'Inter', sans-serif;
   color: #2020cc;
 }
 
-/* Container for all content */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100svh;
   height: 100vh;
   text-align: center;
   padding: 40px 20px;
-  opacity: 0;
-  animation: fadeInContainer 1s ease-in-out forwards;
-  animation-delay: 0.5s;
 }
 
-/* Fade-in effect for the container */
-@keyframes fadeInContainer {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Top Text (head) */
+/* Top & bottom text */
 .top-text,
 .bottom-email {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
-  opacity: 0;
-  animation: fadeInText 1s ease-in-out forwards;
-  animation-delay: 2s;
 }
 
-/* Fade-in effect for the text */
-@keyframes fadeInText {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Centered Toggle Section (logo/about) */
+/* Toggle section (logo/about) */
 .center-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Toggle Items (logo and about text) */
+/* Toggle items: shared styles for logo and text */
 .toggle-item {
   position: absolute;
   top: 50%;
@@ -76,14 +55,13 @@ html, body {
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   z-index: 1;
   pointer-events: none;
-  padding: 0 24px;
+  padding: 0 24px; /* breathing room */
   text-align: center;
 }
 
-/* Show the toggle items when clicked */
 .toggle-item.show {
   opacity: 1;
   visibility: visible;
@@ -91,44 +69,20 @@ html, body {
   pointer-events: auto;
 }
 
-/* Logo Image */
 #logo {
   width: clamp(180px, 30vw, 300px);
   height: auto;
-  user-select: none; /* Disable image selection */
+  user-select: none;
   -webkit-user-drag: none;
-  opacity: 0;
-  animation: fadeInLogo 1s ease-in-out forwards;
-  animation-delay: 1s;
 }
 
-/* Fade-in effect for the logo */
-@keyframes fadeInLogo {
-  to {
-    opacity: 1;
-  }
-}
-
-/* About Text */
 #about p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* Bottom Email Styling (footer) */
-.bottom-email {
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  color: #272ec1;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  animation-delay: 3s; /* Appears after everything else */
-  visibility: visible;
-  text-decoration: none;
-}
-
-/* Responsive Design */
+/* Responsive tweaks */
 @media (max-width: 600px) {
   .container {
     padding: 30px 16px;
@@ -140,9 +94,5 @@ html, body {
 
   #about p {
     font-size: 15px;
-  }
-
-  .bottom-email {
-    font-size: 14px;
   }
 }

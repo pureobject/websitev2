@@ -13,7 +13,7 @@
     <div class="top-text">Experiential Creative, Design & Production</div>
 
     <div class="center-toggle" onclick="toggleContent()">
-      <img id="logo" src="po-logo.png" alt="Pure Object Logo" class="toggle-item" />
+      <img id="logo" src="po-logo.png" alt="Pure Object Logo" class="toggle-item show" />
       <div id="about" class="toggle-item">
         <p>Pure Object is an experiential creative production studio based in London and working globally with creatives and brands to create meaningful work with like-minded people.</p>
       </div>
@@ -24,18 +24,40 @@
     </a>
   </div>
 
+  <!-- JavaScript to handle animations and toggling -->
   <script>
-    function toggleContent() {
+    window.addEventListener('load', () => {
+      // Fade in the image and text when the page loads
       const logo = document.getElementById('logo');
-      const about = document.getElementById('about');
-      logo.classList.toggle('show');
-      about.classList.toggle('show');
-    }
+      const topText = document.querySelector('.top-text');
+      const bottomEmail = document.querySelector('.bottom-email');
 
-    // Fade in the whole container when the page loads
-    window.onload = () => {
-      document.querySelector('.container').style.opacity = '1';
-    };
+      // Set initial opacity to 0
+      logo.style.opacity = '0';
+      topText.style.opacity = '0';
+      bottomEmail.style.opacity = '0';
+
+      // Apply a slight delay for fade-in
+      setTimeout(() => {
+        logo.style.transition = 'opacity 1s ease-in-out';
+        topText.style.transition = 'opacity 1s ease-in-out';
+        bottomEmail.style.transition = 'opacity 1s ease-in-out';
+
+        // Fade in the logo and text
+        logo.style.opacity = '1';
+        topText.style.opacity = '1';
+        bottomEmail.style.opacity = '1';
+      }, 100); // Delay added for smooth transition
+
+      // Add click event to toggle logo and about text
+      const logoAndAbout = document.querySelector('.center-toggle');
+      const aboutText = document.getElementById('about');
+
+      logoAndAbout.addEventListener('click', () => {
+        logo.classList.toggle('show');
+        aboutText.classList.toggle('show');
+      });
+    });
   </script>
 </body>
 </html>

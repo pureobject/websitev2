@@ -32,6 +32,7 @@ html, body {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   color: #272ec1;
+  user-select: none;  /* Prevent text selection */
 }
 
 /* Toggle section (logo/about) */
@@ -80,6 +81,7 @@ html, body {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
+  user-select: none;  /* Prevent text selection */
 }
 
 /* Responsive tweaks */

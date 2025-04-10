@@ -18,12 +18,13 @@ html, body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Push top and bottom apart */
   align-items: center;
-  height: 100svh;
   height: 100vh;
+  height: 100svh; /* Override on browsers that support svh */
   text-align: center;
   padding: 40px 20px;
+  position: relative; /* Needed for absolute positioning inside */
 }
 
 /* Top & bottom text */
@@ -42,15 +43,15 @@ html, body {
   user-select: text; /* Allow email to be selected */
 }
 
-/* Toggle section (logo/about) */
 .center-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: left;
-  position: relative;
+  justify-content: center; /* Center logo/about horizontally */
   width: 100%;
-  height: 100%;
+  position: relative;
+  flex-grow: 1; /* This fills space between top/bottom */
+  /* Removed fixed height */
 }
 
 /* Toggle items: shared styles for logo and text */

@@ -103,6 +103,10 @@ html, body {
     padding: 0 32px;
   }
 
+ #logo {
+    width: clamp(200px, 50vw, 360px); /* Adjust min/mid/max sizes */
+  }
+  
   #about p {
     font-size: 15px;
     padding-left: 24px;
